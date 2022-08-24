@@ -1,0 +1,17 @@
+{
+  "name": "inventory-appb",
+  "version": "1.0.0",
+  "description": "Aplicacion para la gestion de inventario",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "enzo marin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
