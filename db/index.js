@@ -2,7 +2,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 1337
 
 const dbConnect = (app) => {
     mongoose.connect( // .connect retorna una promesa
