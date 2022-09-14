@@ -33,7 +33,9 @@ app.get('/', (req, res, next) =>{
     next()
 })
 */
-
+app.get('/', (res,req) => {
+    console.log('peticion recibida!!!!')
+})
 // midleware 
 //app.use(express.static(path.join(__dirname,'public')))
 
