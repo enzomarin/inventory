@@ -1,8 +1,8 @@
 
+const express = require('express')
 require('dotenv').config()
 //const path = require('path')
 //const axios = require('axios')
-const express = require('express')
 const cors = require('cors')
 const dbConnect = require('./db')
 const Product = require('./models/product')
@@ -35,6 +35,7 @@ app.get('/', (req, res, next) =>{
 */
 app.get('/', (res,req) => {
     console.log('peticion recibida!!!!')
+    res.status(200).json({ok:true})
 })
 // midleware 
 //app.use(express.static(path.join(__dirname,'public')))
