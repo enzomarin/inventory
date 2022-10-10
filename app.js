@@ -10,13 +10,13 @@ const productRouter = require('./routes/products')
 
 
 const app = express()
-app.use(cors())
+
 
 //conexion a la base de datos
 dbConnect(app)
 
 
-
+app.use(cors())
 
 app.use(express.json())
 

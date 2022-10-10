@@ -6,13 +6,20 @@ const mongoose = require('mongoose')
 
 
 const productSchema = mongoose.Schema({
+    barCode: {type: Number , required: true, unique: true},
     name: {type: String, required: true},
-    price: Number
+    description: String,
+    costPrice: Number,
+    price: Number,
+    stock: Number,
+    expirationDate: Date
     },
     {timestamps : true}// automaticamente se crean dos campos createdAt updatedAt
 )
 
 // creamos el modelo
-const Product =mongoose.model('Product', productSchema)
+const Product =mongoose.model('Product', productSchema, 'productsCollection') 
+// si no le pasamos el nombre de la coleccion mongoose prularisa el nombre del modelo para crear la coleccion
+
 
 module.exports = Product
