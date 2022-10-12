@@ -50,4 +50,12 @@ const getProducts = async (req,res) =>{
     res.status(200).json({ok: true, data: products, count: products.length})
 }
 
-module.exports = {createProduct, getProducts}
+const deleteProduct = async (req,res) =>{
+    const id = req.params.id
+    console.log(id);
+    await Product.findByIdAndDelete(id)
+
+    res.status(200).json({ok:true , message: "Producto eliminado"})
+}
+
+module.exports = {createProduct, getProducts, deleteProduct}
