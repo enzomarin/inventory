@@ -27,15 +27,16 @@ const userLoginController = async(req,res) => {
 
 
     // Retornamos el jwt
-    
+    /*
     const serialized = serialize('tokenJWT',jwt, {
         httpOnly: true,
         sameSite: 'strict'
     })
-    res.setHeader('Set-Cookie', jwt)
-    
-    //return res.send({jwt})
-    return res.json('Login successfuly')
+    res.setHeader('Set-Cookie', 'newUser=true')
+    */
+    return res.send({jwt})
+    //return res.json('Login successfuly')
+    //res.json('you got the cookies')
   
 }
 

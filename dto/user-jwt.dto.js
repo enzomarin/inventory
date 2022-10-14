@@ -3,6 +3,7 @@ import {jwtVerify} from 'jose'
 
 // next ya que es middleware
 const userJWTDTO = async (req,res,next) => {
+    
     // Obtenemos el jwt desde la cabecera
     const {authorization} = req.headers;
 
