@@ -1,7 +1,9 @@
 
-const express = require('express')
+//const express = require('express')
+import express from 'express'
 const router = express.Router()
-const productController = require('../controllers/product')
+import productController from '../controllers/product.js'
+//const productController = require('../controllers/product')
 
 
 router.post('/', productController.createProduct)
@@ -11,4 +13,5 @@ router.get('/', productController.getProducts)
 // Ruta para eliminar un producto por su id
 router.delete('/:id',productController.deleteProduct)
 
-module.exports = router
+export default router
+//module.exports = router

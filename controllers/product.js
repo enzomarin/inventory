@@ -1,6 +1,6 @@
 
-const Product = require('../models/product')
-
+//const Product = require('../models/product')
+import Product from '../models/product.js'
 
 const createProduct = (req,res) =>{
     // Comprobamos que el nombre venga en el body
@@ -58,4 +58,5 @@ const deleteProduct = async (req,res) =>{
     res.status(200).json({ok:true , message: "Producto eliminado"})
 }
 
-module.exports = {createProduct, getProducts, deleteProduct}
+export default {createProduct,getProducts,deleteProduct}
+//module.exports = {createProduct, getProducts, deleteProduct}

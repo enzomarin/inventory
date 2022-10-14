@@ -1,5 +1,5 @@
-
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
+//const mongoose = require('mongoose')
 
 // Definimos el esquema de la base de datos
 
@@ -21,5 +21,5 @@ const productSchema = mongoose.Schema({
 const Product =mongoose.model('Product', productSchema, 'productsCollection') 
 // si no le pasamos el nombre de la coleccion mongoose prularisa el nombre del modelo para crear la coleccion
 
-
-module.exports = Product
+export default Product
+//module.exports = Product

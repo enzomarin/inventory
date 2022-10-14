@@ -1,13 +1,19 @@
-
-const express = require('express')
-require('dotenv').config()
+import express from 'express'
+//const express = require('express')
+import dotenv from 'dotenv'
+//require('dotenv').config()
 //const path = require('path')
 //const axios = require('axios')
-const cors = require('cors')
-const dbConnect = require('./db')
-const Product = require('./models/product')
-const productRouter = require('./routes/products')
-const userRouter = require('./routes/user.routes')
+import cors from 'cors'
+//const cors = require('cors')
+import dbConnect from './db/index.js'
+//const dbConnect = require('./db')
+import Product from './models/product.js'
+//const Product = require('./models/product')
+import productRouter from './routes/products.js'
+//const productRouter = require('./routes/products')
+import userRouter from './routes/user.routes.js'
+//const userRouter = require('./routes/user.routes')
 
 
 const app = express()
@@ -18,6 +24,7 @@ dbConnect(app)
 
 
 app.use(cors())
+
 
 //Middlewares
 app.use(express.json())

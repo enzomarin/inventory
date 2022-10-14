@@ -1,8 +1,9 @@
-const mongoose = require('mongoose')
-
+//const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 const {Schema, model} = mongoose
 
 const userSchema = new Schema({
+    _id: {type:String, _id:false},
     name: {type: String, require: true},
     surname: {type: String, require: true},
     username: {type:String, require:true},
@@ -11,6 +12,6 @@ const userSchema = new Schema({
     isAdmin: {type:Boolean, default: false}
 })
 
-const userModel = model("User", userSchema)
+const UserModel = model("User", userSchema)
 
-export default userModel
+export default UserModel
