@@ -41,7 +41,14 @@ const createProduct = (req,res) =>{
     //console.log({body: req.body})
    
 }
+const getProductByBarcode = async(req,res) =>{
+    const {id} = req.params
+    const product = await Product.findOne({'barCode': id})
 
+    if(!product) return res.status(404).send({message: 'Producto no encontrado'})
+
+    res.status(200).json({ok:true, product})
+}
 
 // obtenemos todos los productos
 const getProducts = async (req,res) =>{
@@ -58,5 +65,13 @@ const deleteProduct = async (req,res) =>{
     res.status(200).json({ok:true , message: "Producto eliminado"})
 }
 
-export default {createProduct,getProducts,deleteProduct}
+const updateProduct = async (req,res) => {
+    console.log(req.body)
+    const {id} = req.params
+    const product = await Product.updateOne({'barCode': id},req.body)
+
+    res.status(204).json({ok:true, message:'Producto actualizado'})
+  
+}
+export default {createProduct,getProducts,deleteProduct, updateProduct, getProductByBarcode}
 //module.exports = {createProduct, getProducts, deleteProduct}
