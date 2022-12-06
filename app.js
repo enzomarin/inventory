@@ -21,10 +21,10 @@ const app = express()
 
 //conexion a la base de datos
 dbConnect(app)
-
-
-app.use(cors())
-
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3000"
+  })) // Esta configuracion es necesaria para poder pasar correctamente las cookies de origen cruzado
 
 //Middlewares
 app.use(express.json())

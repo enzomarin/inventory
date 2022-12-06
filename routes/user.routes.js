@@ -14,7 +14,8 @@ const userRouter = express.Router()
 
 userRouter.post('/register', userRegisterDTO, userRegisterController)
 userRouter.post('/login', userLoginDTO, userLoginController)
-userRouter.get('/profile',userJWTDTO, userProfileController)
+//userRouter.get('/profile',userJWTDTO, userProfileController) // Verificacion de JWT
+userRouter.get('/profile', userProfileController)
 /*
 userRouter.patch('/update-data',userJWTDTO)
 userRouter.patch('/update-email',userJWTDTO)

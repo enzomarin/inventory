@@ -3,6 +3,7 @@ import UserModel from "../models/user.schema.js";
 
 
 const userProfileController = async (req,res) =>{
+    /*
     console.log(req)
     console.log('----------------------')
     console.log(req.cookies);
@@ -18,5 +19,11 @@ const userProfileController = async (req,res) =>{
     const {_id, name, surname, username, email}= existingUserById
 
     return res.send( {_id, name, surname, username, email})
+
+    */
+   console.log(req.cookies)
+   return res.json({
+        user: 'userTest'
+   })
 }
 export default userProfileController
